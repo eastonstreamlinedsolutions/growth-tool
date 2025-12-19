@@ -1,0 +1,324 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww35460\viewh22260\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs29\fsmilli14667 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">\
+    <title>Growth Diagnostic | Streamlined Solutions</title>\
+    <style>\
+        :root \{\
+            --ss-green: #16c800;\
+            --ss-black: #000000;\
+            --ss-gray: #f4f4f4;\
+            --ss-dark-gray: #333333;\
+        \}\
+\
+        /* DESKTOP-FIRST SCALING */\
+        .ss-quiz-container \{\
+            max-width: 850px; \
+            margin: 40px auto;\
+            padding: 0 20px;\
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;\
+            -webkit-font-smoothing: antialiased;\
+        \}\
+\
+        /* BOLD HEADER SECTION */\
+        .ss-quiz-header \{ text-align: center; padding: 40px 0; \}\
+        .ss-quiz-header .ss-hook \{ \
+            color: var(--ss-green); \
+            font-weight: 800; \
+            margin-bottom: 15px; \
+            font-size: 1.1rem; \
+            text-transform: uppercase; \
+            letter-spacing: 3px; \
+        \}\
+        .ss-quiz-header h1 \{ \
+            text-transform: uppercase; \
+            letter-spacing: 4px; \
+            font-size: 3rem; \
+            margin: 0; \
+            color: var(--ss-black); \
+            font-weight: 900; \
+            line-height: 1.1; \
+        \}\
+\
+        /* THE DYNAMIC GREEN UNDERLINE */\
+        .ss-underline-container \{\
+            position: relative;\
+            display: inline-block;\
+            white-space: nowrap;\
+        \}\
+        .ss-underline-svg \{\
+            position: absolute;\
+            left: 0;\
+            bottom: -15px;\
+            width: 100%;\
+            height: 15px;\
+            z-index: -1;\
+        \}\
+        .ss-underline-path \{\
+            fill: none;\
+            stroke: var(--ss-green);\
+            stroke-width: 5;\
+            stroke-linecap: round;\
+            stroke-dasharray: 1000;\
+            stroke-dashoffset: 1000;\
+            animation: ssDrawLine 1.5s ease-out forwards;\
+            animation-delay: 0.3s;\
+        \}\
+\
+        .ss-quiz-header .ss-sub \{ \
+            opacity: 0.7; \
+            font-size: 1.2rem; \
+            margin-top: 35px; \
+            line-height: 1.6; \
+            max-width: 600px; \
+            margin-left: auto; \
+            margin-right: auto; \
+            font-weight: 500;\
+        \}\
+\
+        /* MAIN DIAGNOSTIC CARD */\
+        .ss-quiz-card \{\
+            background: #ffffff;\
+            border: 1px solid #e0e0e0;\
+            padding: 60px 50px;\
+            text-align: center;\
+            min-height: 500px;\
+            display: flex;\
+            flex-direction: column;\
+            justify-content: center;\
+            box-shadow: 0 20px 50px rgba(0,0,0,0.07);\
+            border-radius: 8px;\
+        \}\
+\
+        .ss-quiz-step \{ display: none; \}\
+        .ss-quiz-step.active \{ display: block; animation: ssFadeIn 0.4s ease forwards; \}\
+\
+        .ss-step-title \{ \
+            text-transform: uppercase; \
+            letter-spacing: 2px; \
+            font-size: 1.4rem; \
+            margin-bottom: 40px; \
+            font-weight: 700; \
+            line-height: 1.4; \
+        \}\
+\
+        /* CLICKABLE OPTIONS */\
+        .ss-options-grid \{ display: grid; gap: 18px; \}\
+        .ss-option \{ \
+            padding: 28px; \
+            border: 2px solid var(--ss-gray); \
+            cursor: pointer; \
+            transition: all 0.2s ease; \
+            font-weight: 600; \
+            text-transform: uppercase; \
+            font-size: 1rem; \
+            letter-spacing: 1.5px; \
+            line-height: 1.4;\
+            display: flex;\
+            align-items: center;\
+            justify-content: center;\
+            min-height: 80px;\
+        \}\
+        .ss-option:hover, .ss-option:active \{ border-color: var(--ss-green); background: rgba(22, 200, 0, 0.04); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); \}\
+\
+        /* INPUT FIELDS */\
+        .ss-input-group \{ margin-bottom: 20px; \}\
+        .ss-input \{ \
+            width: 100%; \
+            padding: 22px; \
+            border: 2px solid var(--ss-gray); \
+            box-sizing: border-box; \
+            font-size: 18px; \
+            border-radius: 0; \
+            font-family: inherit;\
+        \}\
+        .ss-input:focus \{ border-color: var(--ss-green); outline: none; \}\
+\
+        /* ACTION BUTTONS */\
+        .ss-btn \{ \
+            display: inline-block; \
+            width: 100%; \
+            padding: 25px; \
+            text-decoration: none; \
+            text-transform: uppercase; \
+            font-weight: 700; \
+            letter-spacing: 2.5px; \
+            border: none; \
+            cursor: pointer; \
+            transition: all 0.3s ease; \
+            text-align: center; \
+            box-sizing: border-box; \
+            font-size: 1.1rem; \
+        \}\
+        .ss-btn-black \{ background: var(--ss-black); color: #fff; margin-top: 20px; \}\
+        .ss-btn-green \{ background: var(--ss-green); color: #fff; margin-top: 20px; \}\
+\
+        /* RESULTS ELEMENTS */\
+        .ss-bonus-box \{ margin: 30px 0; padding: 25px; border: 1px dashed var(--ss-green); background: rgba(22, 200, 0, 0.02); text-align: left; \}\
+        .ss-bonus-tag \{ color: var(--ss-green); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 8px; \}\
+        .ss-bonus-text \{ font-size: 1rem; color: var(--ss-black); margin: 0; font-weight: 500; line-height: 1.5; \}\
+\
+        .ss-restart \{ margin-top: 45px; background: none; border: none; text-decoration: underline; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; opacity: 0.4; padding: 10px; \}\
+\
+        /* RESPONSIVE SCALING */\
+        @media (max-width: 600px) \{\
+            .ss-quiz-header h1 \{ font-size: 1.8rem; \}\
+            .ss-quiz-header .ss-sub \{ font-size: 1rem; \}\
+            .ss-quiz-card \{ padding: 35px 20px; min-height: 480px; \}\
+            .ss-step-title \{ font-size: 1.1rem; \}\
+            .ss-option \{ font-size: 0.8rem; padding: 20px; min-height: 65px; \}\
+            .ss-btn \{ padding: 20px; font-size: 0.9rem; \}\
+        \}\
+\
+        @keyframes ssFadeIn \{ from \{ opacity: 0; transform: translateY(15px); \} to \{ opacity: 1; transform: translateY(0); \} \}\
+        @keyframes ssDrawLine \{ to \{ stroke-dashoffset: 0; \} \}\
+    </style>\
+</head>\
+<body>\
+\
+<div class="ss-quiz-container">\
+    <div class="ss-quiz-header">\
+        <p class="ss-hook">Free Strategy Tool</p>\
+        <h1>\
+            Maximize Your<br>\
+            <span class="ss-underline-container">\
+                Business Growth\
+                <svg class="ss-underline-svg" viewBox="0 0 300 12" preserveAspectRatio="none">\
+                    <path class="ss-underline-path" d="M4 8C60 4 120 4 296 8" />\
+                </svg>\
+            </span>\
+        </h1>\
+        <p class="ss-sub">Use our free strategy tool to ensure you are aligned with your goals, capitalizing on your momentum, and reclaiming your time.</p>\
+    </div>\
+\
+    <div class="ss-quiz-card">\
+        <div class="ss-quiz-step active" id="step1">\
+            <h2 class="ss-step-title">Where do you want to see the most impact?</h2>\
+            <div class="ss-options-grid">\
+                <div class="ss-option" onclick="selectGoal('social')">More social media leads / increased digital presence</div>\
+                <div class="ss-option" onclick="selectGoal('seo')">Search engine rankings / improved user experience</div>\
+                <div class="ss-option" onclick="selectGoal('systems')">Manual work time savings / operational efficiency</div>\
+            </div>\
+        </div>\
+\
+        <div class="ss-quiz-step" id="step2">\
+            <h2 class="ss-step-title">Secure Your Results</h2>\
+            <form id="ss-lead-form" onsubmit="submitToHubSpot(event)">\
+                <div class="ss-input-group">\
+                    <input type="text" id="user-name" class="ss-input" placeholder="FULL NAME" required autocomplete="name">\
+                </div>\
+                <div class="ss-input-group">\
+                    <input type="email" id="user-email" class="ss-input" placeholder="EMAIL ADDRESS" required autocomplete="email">\
+                </div>\
+                <button type="submit" class="ss-btn ss-btn-black" id="submit-btn">Unlock Recommendations</button>\
+            </form>\
+        </div>\
+\
+        <div class="ss-quiz-step" id="step3">\
+            <div style="background: var(--ss-black); color: #fff; padding: 10px 20px; display: inline-block; margin-bottom: 25px;">\
+                <span style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">Diagnostic Match Found</span>\
+            </div>\
+            \
+            <h1 id="res-title" style="margin: 0 0 15px 0; text-transform: uppercase; font-size: 1.8rem; line-height: 1.2;">--</h1>\
+            <p id="res-desc" style="font-size: 1.1rem; line-height: 1.6; color: #555; margin-bottom: 20px;"></p>\
+            \
+            <div class="ss-bonus-box">\
+                <span class="ss-bonus-tag">Bonus Included</span>\
+                <p class="ss-bonus-text">Schedule your call now to include a <b>Free Digital Systems Audit</b> ($250 value) with your consultation.</p>\
+            </div>\
+\
+            <a href="https://meetings-na2.hubspot.com/easton-wiechert" target="_blank" class="ss-btn ss-btn-green">Book Your Free Audit Now</a>\
+            <a href="#" id="service-link" class="ss-btn ss-btn-black">Learn More About These Services</a>\
+            \
+            <br>\
+            <button class="ss-restart" onclick="restartQuiz()">\uc0\u8592  Back to Start</button>\
+        </div>\
+    </div>\
+</div>\
+\
+<script>\
+    let selectedPath = "";\
+\
+    function selectGoal(choice) \{\
+        selectedPath = choice;\
+        document.getElementById('step1').classList.remove('active');\
+        document.getElementById('step2').classList.add('active');\
+    \}\
+\
+    function submitToHubSpot(e) \{\
+        e.preventDefault();\
+        const btn = document.getElementById('submit-btn');\
+        const name = document.getElementById('user-name').value;\
+        const email = document.getElementById('user-email').value;\
+\
+        const nameParts = name.trim().split(" ");\
+        const firstName = nameParts[0];\
+        const lastName = nameParts.slice(1).join(" ") || "Client";\
+\
+        btn.innerText = "Processing...";\
+        btn.disabled = true;\
+\
+        const portalId = "244076763";\
+        const formId = "d8ae4c12-d5d6-4757-8d5a-fbb6f4f9f672";\
+        const url = `https://api.hsforms.com/submissions/v3/integration/submit/$\{portalId\}/$\{formId\}`;\
+\
+        fetch(url, \{\
+            method: "POST",\
+            headers: \{ 'Content-Type': 'application/json' \},\
+            body: JSON.stringify(\{\
+                "fields": [\
+                    \{ "name": "firstname", "value": firstName \},\
+                    \{ "name": "lastname", "value": lastName \},\
+                    \{ "name": "email", "value": email \}\
+                ],\
+                "context": \{ "pageUri": window.location.href, "pageName": "Maximize Growth Diagnostic" \}\
+            \})\
+        \}).then(() => \{ showResults(); \}).catch(() => \{ showResults(); \});\
+    \}\
+\
+    function showResults() \{\
+        document.getElementById('step2').classList.remove('active');\
+        document.getElementById('step3').classList.add('active');\
+        const title = document.getElementById('res-title');\
+        const desc = document.getElementById('res-desc');\
+        const sLink = document.getElementById('service-link');\
+\
+        if (selectedPath === 'social') \{\
+            title.innerText = "Social Media Packages & Digital Marketing";\
+            desc.innerText = "We'll build a custom bridge between your social content and high-quality leads, ensuring your business gets seen by the right audience.";\
+            sLink.innerText = "View Social Media Packages";\
+            sLink.href = "https://www.streamlined-solutionsllc.com/digital-marketing-services";\
+        \} else if (selectedPath === 'seo') \{\
+            title.innerText = "SEO Optimized Website / Landing Page";\
+            desc.innerText = "Your growth depends on visibility. We\'92ll build a technical foundation that dominates search rankings and converts visitors into buyers.";\
+            sLink.innerText = "Explore Web & SEO Solutions";\
+            sLink.href = "https://www.streamlined-solutionsllc.com/custom-website-development";\
+        \} else if (selectedPath === 'systems') \{\
+            title.innerText = "Operations & Systems Audit";\
+            desc.innerText = "Stop losing hours to manual administration. We implement digital toolsets that handle the heavy lifting while you're doing what matters most.";\
+            sLink.innerText = "Browse System Implementations";\
+            sLink.href = "https://www.streamlined-solutionsllc.com/operational-efficiency-framework";\
+        \}\
+    \}\
+\
+    function restartQuiz() \{\
+        document.getElementById('submit-btn').innerText = "Unlock Recommendations";\
+        document.getElementById('submit-btn').disabled = false;\
+        document.getElementById('step3').classList.remove('active');\
+        document.getElementById('step1').classList.add('active');\
+        document.getElementById('ss-lead-form').reset();\
+    \}\
+</script>\
+\
+</body>\
+</html>}
